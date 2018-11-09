@@ -1,0 +1,42 @@
+{
+  "name": "postcss-wrap-namespace",
+  "version": "0.0.1",
+  "description": "PostCSS plugin to wrap css rules into a namespace and change the rules on html or :root in rootSelector, eg .my-selector {} to .namespace .my-selector {}, html {} to .rootSelector {}",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "namespace",
+    "wrap",
+    "wrap namespace",
+    "root selector"
+  ],
+  "author": "JamesLou <loubaojian@126.com>",
+  "license": "MIT",
+  "repository": "loubaojian/postcss-wrap-namespace",
+  "bugs": {
+    "url": "https://github.com/loubaojian/postcss-wrap-namespace/issues"
+  },
+  "homepage": "https://github.com/loubaojian/postcss-wrap-namespace",
+  "dependencies": {
+    "colors": "^1.3.2",
+    "postcss": "^6.0.16"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-postcss": "^2.0.2",
+    "jest": "^22.4.2"
+  },
+  "scripts": {
+    "test": "jest && eslint *.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5",
+    "env": {
+      "jest": true
+    }
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
