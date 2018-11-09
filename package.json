@@ -1,6 +1,6 @@
 {
   "name": "postcss-wrap-namespace",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PostCSS plugin to wrap css rules into a namespace and change the rules on html or :root in rootSelector, eg .my-selector {} to .namespace .my-selector {}, html {} to .rootSelector {}",
   "keywords": [
     "postcss",

@@ -3,7 +3,7 @@ require('colors');
 
 const rootSelectors = [':root', 'html'];
 const bodySelector = 'body';
-const exclude = /(^:|^to$|^from$|%$|html$|body$)/;
+const exclude = /(^:|^to$|^from$|%$)/;
 
 module.exports = postcss.plugin('postcss-wrap-namespace', function (opts) {
     opts = opts || {};
@@ -43,7 +43,9 @@ module.exports = postcss.plugin('postcss-wrap-namespace', function (opts) {
 
         root.walkRules(function (rule) {
             rule.selectors = rule.selectors.map(function (selector) {
-                if (rootSelectors.indexOf(selector) > -1) {
+                if (isExclude(selector)) {
+                    return selector;
+                } else if (rootSelectors.indexOf(selector) > -1) {
                     // html
                     return opts.rootSelector;
                 } else if (selector === bodySelector) {

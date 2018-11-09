@@ -120,6 +120,16 @@ test('should skip selectors from opts.skip array', () => {
     });
 });
 
+it('should skip html body', () => {
+    const inputCss = 'html{ } body{ }';
+    const outputCss = `${inputCss}`;
+    return run(inputCss, outputCss, {
+        namespace: NAMESPACE,
+        rootSelector: ROOTSELECTOR,
+        skip: [/^html/, /^body/]
+    });
+});
+
 it('should all done', () => {
     let inputCss = 'html{ } .skip{ } .foo{ } .no{ } from{ } to{ } 0%{ }';
     let outputCss =
